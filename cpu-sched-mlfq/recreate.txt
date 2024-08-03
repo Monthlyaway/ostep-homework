@@ -1,0 +1,15 @@
+Figure 8.2: ./mlfq.py -n 3 -a 1 -j 1 -M 0 -c
+
+Figure 8.3(left): ./mlfq.py -n 3 -l 0,200,0:100,20,0 -c
+Figure 8.3(right): ./mlfq.py -n 3 -l 0,200,0:50,20,1 -c
+
+Figure 8.4(left): ./mlfq.py -n 3 -l 0,100,0:100,50,1:100,50,1 -i 1 -c
+Figure 8.4(right): 
+
+P4: ./mlfq.py -n 3 -S -l 50,300,5:0,300,0 -i 1 -c
+
+P6: 
+./mlfq.py -s 40 -n 10 -j 300 -B 200 -m 600 -M 10 -a 3 -c > without-I.txt
+./mlfq.py -s 40 -n 10 -j 300 -B 200 -m 600 -M 10 -a 3 -I -c > with-I.txt
+
+Result: simulate with flag -I(if specified, jobs that finished I/O move immediately to front of current queue), the turnaround time is roughly the same, but response time rockets.
